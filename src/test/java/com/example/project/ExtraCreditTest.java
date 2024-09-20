@@ -9,6 +9,7 @@ public class ExtraCreditTest {
         int people = 6;
         int percent = 25;
         double cost = 52.27;
+        
         String items = "salmon\npizza\nsalad\nfrench fries\nmilkshake\n";
         String expectedOutput = "-------------------------------\n" +
                                 "Total bill before tip: $52.27\n" +

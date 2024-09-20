@@ -3,9 +3,16 @@ import java.util.Scanner;
 // https://www.w3schools.com/java/java_arraylist.asp
 
 public class ExtraCredit {
-    public static double roundToTwoPlaces(double num) {
+    public static String roundToTwoPlaces(double num) {
         // https://stackoverflow.com/questions/11701399/round-up-to-2-decimal-places-in-java
-        return Math.round(num * 100.0) / 100.0;
+        double rounded = Math.round(num * 100.0) / 100.0;
+        String roundedStr = String.valueOf(rounded);
+        // https://stackoverflow.com/questions/51462081/how-to-split-string-in-java-based-on-period
+        // Append a "0" if there is only one digit after the period -> ex: $15.0 should be $15.00
+        if (roundedStr.split("\\.")[1].length() == 1) {
+            roundedStr += '0';
+        }
+        return roundedStr;
     }
 
     //WRITE YOUR PROGRAM IN calculateTip
